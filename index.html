@@ -13,10 +13,16 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html, body {
+      height: 100%;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       color: white;
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #000;
     }
     #bg-video {
       position: fixed;
@@ -107,6 +113,11 @@
       color: #a50d0d;
       transform: scale(1.1);
     }
+    main {
+      flex: 1;
+      padding: 150px 20px 60px;
+      text-align: center;
+    }
     .hero {
       text-align: center;
       padding: 200px 20px 100px;
@@ -156,13 +167,12 @@
     .social-links .icons a img {
       width: 40px;
       height: 40px;
-      filter: brightness(0) invert(1);
+      /* Se remueve el filtro para mostrar el color original */
       transition: transform 0.3s ease;
     }
     .social-links .icons a:hover img {
       transform: scale(1.2);
     }
-    /* Sección de Políticas de Privacidad */
     .privacy {
       padding: 40px 20px;
       background: rgba(0,0,0,0.85);
@@ -251,7 +261,6 @@
         <li><a href="sobre.html">Sobre Nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <!-- politicas -->
       </ul>
     </nav>
   </header>
@@ -272,20 +281,20 @@
           <img src="ig.png" alt="Instagram">
         </a>
         <a href="https://twitter.com/tucuenta" target="_blank">
-          <img src="Xpng.png" alt="Twitter">
+          <img src="whas.png" alt="Whatsapp">
         </a>
         <a href="https://tiktok.com/@tucuenta" target="_blank">
           <img src="tiktok.png" alt="TikTok">
         </a>
       </div>      
     </section>
+
   </main>
   <footer>
     <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
     <p>
-        <a href="politicas.html">Políticas de Privacidad</a> | 
-        <!-- <a href="terminos.html">Términos y Condiciones</a> -->
-      </p>
+      <a href="politicas.html">Políticas de Privacidad</a>
+    </p>
   </footer>
 </body>
 </html>
