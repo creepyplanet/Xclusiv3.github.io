@@ -3,52 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos - XCLUSIV3</title>
+    <title>Servicios - XCLUSIV3</title>
+    <link rel="icon" type="image/png" href="xclusive.jpg">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .event {
-            background: #111;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            background: #ff007f;
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
+            overflow-x: hidden;
         }
-        .btn:hover {
-            background: #ff0055;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .nav-links li a:hover {
+            color: #a50d0d;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 150px 20px 60px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+        .service {
+            background: #111;
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 12px;
+            max-width: 700px;
+        }
+        .service h2 {
+            font-size: 28px;
+            color: #ff0055;
+        }
+        .service p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: rgba(0,0,0,0.95);
+                right: 0;
+                top: 60px;
+                width: 220px;
+                text-align: center;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Próximos Eventos</h1>
-        <div class="event">
-            <h2>Fiesta de Verano</h2>
-            <p>Disfruta de la mejor música y ambiente el próximo sábado en Club X.</p>
+    <header>
+        <div class="logo-container">
+            <img src="e83ee3d3-e48a-4e12-9cf6-51248f5037f7.png" alt="XCLUSIV3 Logo">
+            <h1>XCLUSIV3</h1>
         </div>
-        <div class="event">
-            <h2>Electro Night</h2>
-            <p>Un evento exclusivo con los mejores DJs internacionales.</p>
+        <nav>
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre Nosotros</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Servicios</h1>
+        <div class="service">
+            <h2>Organización de Eventos</h2>
+            <p>Desde fiestas privadas hasta festivales multitudinarios, nos encargamos de cada detalle para que vivas una experiencia única.</p>
         </div>
-        <a href="index.html" class="btn">Volver al Inicio</a>
-    </div>
+        <div class="service">
+            <h2>Promoción y Marketing</h2>
+            <p>Gestionamos la difusión y visibilidad de tu evento en redes sociales, colaboraciones y más.</p>
+        </div>
+        <div class="service">
+            <h2>Booking de Artistas</h2>
+            <p>Trabajamos con DJs, artistas urbanos y performers para elevar el nivel de tu fiesta.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

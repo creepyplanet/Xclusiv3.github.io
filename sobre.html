@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - XCLUSIV3</title>
+    <link rel="icon" type="image/png" href="xclusive.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .nav-links li a:hover {
+            color: #a50d0d;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 150px 20px 60px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: rgba(0,0,0,0.95);
+                right: 0;
+                top: 60px;
+                width: 220px;
+                text-align: center;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="e83ee3d3-e48a-4e12-9cf6-51248f5037f7.png" alt="XCLUSIV3 Logo">
+            <h1>XCLUSIV3</h1>
+        </div>
+        <nav>
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre Nosotros</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>¿Quiénes Somos?</h1>
+        <p>
+            En <strong>XCLUSIV3</strong> somos una promotora de eventos única que transforma la vida nocturna de <strong>toda Almería</strong>. Organizamos fiestas inolvidables en discotecas y lugares exclusivos, uniendo música, ambiente y emoción para que cada evento sea una experiencia auténticamente XCLUSIV3.
+        </p>
+    </main>
+    <footer>
+        <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

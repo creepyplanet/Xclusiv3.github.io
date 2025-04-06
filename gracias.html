@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gracias por Contactar - XCLUSIV3</title>
+  <link rel="icon" type="image/png" href="xclusive.jpg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #1a1a1a, #000000);
+      box-shadow: 0 0 20px rgba(255, 0, 64, 0.4);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #ff0040;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      padding: 12px 25px;
+      background-color: #ff0040;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    a:hover {
+      background-color: #cc0033;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Gracias!</h1>
+    <p>Tu mensaje ha sido enviado correctamente.<br>
+    Nos pondremos en contacto contigo lo antes posible.</p>
+    <a href="index.html">Volver al Inicio</a>
+  </div>
+</body>
+</html>
