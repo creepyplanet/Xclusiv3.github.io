@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="xclusive.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -19,14 +19,14 @@
             overflow-x: hidden;
         }
         #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
         .preloader {
             position: fixed;
             width: 100%;
@@ -72,9 +72,13 @@
             align-items: center;
         }
         .logo-container img {
-            height: 60px;
-            margin-right: 15px;
-        }
+  height: 60px;
+  margin-right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 50%;
+}
+
         nav {
             flex-grow: 1;
             display: flex;
@@ -107,7 +111,6 @@
         .hero {
             text-align: center;
             padding: 200px 20px 100px;
-            background: url('party-bg.jpg') center/cover no-repeat;
         }
         .hero h2 {
             font-size: 60px;
@@ -130,6 +133,30 @@
         .gallery img:hover {
             transform: scale(1.08);
             box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .social-links h3 {
+            font-size: 24px;
+            color: #ff007f;
+            margin-bottom: 15px;
+        }
+        .social-links .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .social-links .icons a img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+        }
+        .social-links .icons a:hover img {
+            transform: scale(1.2);
         }
         footer {
             text-align: center;
@@ -169,10 +196,10 @@
     </script>
 </head>
 <body>
-    <video autoplay muted loop id="bg-video">
+    <video autoplay muted loop playsinline id="bg-video">
         <source src="video2.mp4" type="video/mp4">
     </video>
-    
+
     <div class="preloader">
         <span>Loading...</span>
     </div>
@@ -196,10 +223,18 @@
             <h2>¡Bienvenido a XCLUSIV3!</h2>
         </section>
         <section class="gallery">
-            <img src="fiesta1.jpg" alt="Fiesta 1">
+            <img src="fiesta1puerto.jpg" alt="Fiesta 1">
             <img src="fiesta3.jpg" alt="Fiesta 2">
-            <img src="fiesta2.jpg" alt="Fiesta 3">
-            <img src="e83ee3d3-e48a-4e12-9cf6-51248f5037f7.png" alt="Fiesta 4">
+            <img src="puertoaguadulce.jpg" alt="Fiesta 3">
+            <img src="fiesta2.jpg" alt="Fiesta 4">
+        </section>
+        <section class="social-links">
+            <h3>Síguenos en redes</h3>
+            <div class="icons">
+                <a href="https://instagram.com/xclusiv3.events" target="_blank"><img src="ig.png" alt="Instagram"></a>
+                <a href="https://twitter.com/tucuenta" target="_blank"><img src="Xpng.png" alt="Twitter"></a>
+                <a href="https://tiktok.com/@tucuenta" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+            </div>
         </section>
     </main>
     <footer>
