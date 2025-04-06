@@ -1,244 +1,291 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XCLUSIV3</title>
-    <link rel="icon" type="image/png" href="xclusive.jpg">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XCLUSIV3</title>
+  <link rel="icon" type="image/png" href="logox1.jpg" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 1.5s ease-out forwards;
+      animation-delay: 1.5s;
+    }
+    .preloader span {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-container img {
+      height: 60px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      border-radius: 50%;
+    }
+    nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s, transform 0.2s;
+    }
+    .nav-links li a:hover {
+      color: #a50d0d;
+      transform: scale(1.1);
+    }
+    .hero {
+      text-align: center;
+      padding: 200px 20px 100px;
+      background: url('party-bg.jpg') center/cover no-repeat;
+    }
+    .hero h2 {
+      font-size: 60px;
+      text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 60px 20px;
+    }
+    .gallery img {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.7);
+      border-top: 2px solid #1d1d1d;
+      border-bottom: 2px solid #1d1d1d;
+    }
+    .social-links h3 {
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+    .social-links .icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    .social-links .icons a img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+    .social-links .icons a:hover img {
+      transform: scale(1.2);
+    }
+    /* Sección de Políticas de Privacidad */
+    .privacy {
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.85);
+      border-top: 2px solid #ffcc00;
+      margin-top: 30px;
+    }
+    .privacy h3 {
+      font-size: 28px;
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .privacy p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.9);
+      font-size: 16px;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(0,0,0,0.95);
+        right: 0;
+        top: 60px;
+        width: 220px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      menuToggle.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+      });
+      
+      // Repetir video solo 6 veces
+      const video = document.getElementById("bg-video");
+      let playCount = 0;
+      const maxPlays = 6;
+      video.addEventListener("ended", function() {
+        playCount++;
+        if (playCount < maxPlays) {
+          video.currentTime = 0;
+          video.play();
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            overflow-x: hidden;
-        }
-        #bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        .preloader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            animation: fadeOut 1.5s ease-out forwards;
-            animation-delay: 1.5s;
-        }
-        .preloader span {
-            font-size: 40px;
-            font-weight: bold;
-            color: white;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo-container img {
-  height: 60px;
-  margin-right: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-  border-radius: 50%;
-}
-
-        nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-        .menu-toggle {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            display: none;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-        .nav-links li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            transition: color 0.3s, transform 0.2s;
-        }
-        .nav-links li a:hover {
-            color: #a50d0d;
-            transform: scale(1.1);
-        }
-        .hero {
-            text-align: center;
-            padding: 200px 20px 100px;
-        }
-        .hero h2 {
-            font-size: 60px;
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 60px 20px;
-        }
-        .gallery img {
-            width: 320px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.08);
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
-        }
-        .social-links {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .social-links h3 {
-            font-size: 24px;
-            color: #ff007f;
-            margin-bottom: 15px;
-        }
-        .social-links .icons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        .social-links .icons a img {
-            width: 40px;
-            height: 40px;
-            filter: brightness(0) invert(1);
-            transition: transform 0.3s ease;
-        }
-        .social-links .icons a:hover img {
-            transform: scale(1.2);
-        }
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.9);
-            font-size: 16px;
-        }
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                background: rgba(0,0,0,0.95);
-                right: 0;
-                top: 60px;
-                width: 220px;
-                text-align: center;
-                padding: 20px;
-                border-radius: 10px;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.querySelector(".menu-toggle");
-            const navLinks = document.querySelector(".nav-links");
-            menuToggle.addEventListener("click", function() {
-                navLinks.classList.toggle("active");
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="video2.mp4" type="video/mp4">
-    </video>
+  <video autoplay muted playsinline id="bg-video">
+    <source src="video2.mp4" type="video/mp4">
+  </video>
 
-    <div class="preloader">
-        <span>Loading...</span>
+  <div class="preloader">
+    <span>Loading...</span>
+  </div>
+  <header>
+    <div class="logo-container">
+      <img src="logox1.jpg" alt="XCLUSIV3 Logo">
+      <h1>XCLUSIV3</h1>
     </div>
-    <header>
-        <div class="logo-container">
-            <img src="e83ee3d3-e48a-4e12-9cf6-51248f5037f7.png" alt="XCLUSIV3 Logo">
-            <h1>XCLUSIV3</h1>
-        </div>
-        <nav>
-            <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="sobre.html">Sobre Nosotros</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h2>¡Bienvenido a XCLUSIV3!</h2>
-        </section>
-        <section class="gallery">
-            <img src="fiesta1puerto.jpg" alt="Fiesta 1">
-            <img src="fiesta3.jpg" alt="Fiesta 2">
-            <img src="puertoaguadulce.jpg" alt="Fiesta 3">
-            <img src="fiesta2.jpg" alt="Fiesta 4">
-        </section>
-        <section class="social-links">
-            <h3>Síguenos en redes</h3>
-            <div class="icons">
-                <a href="https://instagram.com/xclusiv3.events" target="_blank"><img src="ig.png" alt="Instagram"></a>
-                <a href="https://twitter.com/tucuenta" target="_blank"><img src="Xpng.png" alt="Twitter"></a>
-                <a href="https://tiktok.com/@tucuenta" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
-    </footer>
+    <nav>
+      <button class="menu-toggle">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <!-- politicas -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>¡Bienvenido a XCLUSIV3!</h2>
+    </section>
+    <section class="gallery">
+      <img src="fiesta1puerto.jpg" alt="Fiesta 1">
+      <img src="fiesta3.jpg" alt="Fiesta 2">
+      <img src="puertoaguadulce.jpg" alt="Fiesta 3">
+      <img src="fiesta2.jpg" alt="Fiesta 4">
+    </section>
+    <section class="social-links">
+      <h3>Síguenos en Redes</h3>
+      <div class="icons">
+        <a href="https://instagram.com/xclusiv3.events" target="_blank">
+          <img src="ig.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/tucuenta" target="_blank">
+          <img src="Xpng.png" alt="Twitter">
+        </a>
+        <a href="https://tiktok.com/@tucuenta" target="_blank">
+          <img src="tiktok.png" alt="TikTok">
+        </a>
+      </div>      
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
+    <p>
+        <a href="politicas.html">Políticas de Privacidad</a> | 
+        <!-- <a href="terminos.html">Términos y Condiciones</a> -->
+      </p>
+  </footer>
 </body>
 </html>
