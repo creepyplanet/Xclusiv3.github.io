@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO Mejorado -->
-  <title>XCLUSIV3 | Eventos Electrónicos Exclusivos</title>
-  <meta name="description" content="XCLUSIV3 organiza eventos únicos de música electrónica. Vive una experiencia inolvidable con DJs, luces y energía sin igual." />
-  <meta name="keywords" content="XCLUSIV3, eventos, música electrónica, fiestas, DJs, warehouse, Puerto" />
-  <meta name="author" content="XCLUSIV3 Team" />
-
+  <meta name="description" content="XCLUSIV3 - Eventos únicos e inolvidables. Únete a nuestras experiencias exclusivas." />
+  <title>XCLUSIV3</title>
   <link rel="icon" type="image/png" href="xclusivelogo.png" />
-
-  <!-- Fuentes y estilos -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -69,19 +62,19 @@
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.2); opacity: 0.7; }
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 15px;
-      margin-top: 0;
+      padding: 10px 25px;
       background: rgba(0, 0, 0, 0.95);
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
@@ -96,10 +89,9 @@
     .logo-container h1 {
       font-size: 24px;
     }
+
     nav {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
+      position: relative;
     }
     .menu-toggle {
       background: none;
@@ -108,11 +100,13 @@
       font-size: 30px;
       cursor: pointer;
       display: none;
+      padding: 5px;
     }
     .nav-links {
       list-style: none;
       display: flex;
       gap: 25px;
+      margin-right: 10px;
     }
     .nav-links li a {
       text-decoration: none;
@@ -125,6 +119,7 @@
       color: #a50d0d;
       transform: scale(1.1);
     }
+
     main {
       flex: 1;
       padding: 90px 20px 60px;
@@ -157,6 +152,7 @@
       transform: scale(1.08);
       box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
     }
+
     .social-links {
       text-align: center;
       margin-top: 50px;
@@ -184,6 +180,27 @@
     .social-links .icons a:hover img {
       transform: scale(1.2);
     }
+
+    .privacy {
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.85);
+      border-top: 2px solid #ffcc00;
+      margin-top: 30px;
+    }
+    .privacy h3 {
+      font-size: 28px;
+      color: #ffcc00;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .privacy p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
     footer {
       text-align: center;
       padding: 25px;
@@ -195,19 +212,44 @@
       text-decoration: none;
       margin: 0 10px;
     }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 25px;
+        top: 60px;
+        background: rgba(0, 0, 0, 0.95);
+        width: 200px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        text-align: right;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links li {
+        margin-bottom: 12px;
+      }
+    }
   </style>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
-      menuToggle.addEventListener("click", function() {
+      menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("active");
       });
 
       const video = document.getElementById("bg-video");
       let playCount = 0;
       const maxPlays = 6;
-      video.addEventListener("ended", function() {
+      video.addEventListener("ended", function () {
         playCount++;
         if (playCount < maxPlays) {
           video.currentTime = 0;
@@ -219,20 +261,18 @@
 </head>
 <body>
   <video autoplay muted playsinline id="bg-video">
-    <source src="video2.mp4" type="video/mp4">
+    <source src="video2.mp4" type="video/mp4" />
   </video>
-
   <div class="preloader">
     <span>Loading...</span>
   </div>
-
   <header>
     <div class="logo-container">
-      <img src="logox1.jpg" alt="Logo de XCLUSIV3 - Eventos de música electrónica">
+      <img src="logox1.jpg" alt="Logo de XCLUSIV3" />
       <h1>XCLUSIV3</h1>
     </div>
     <nav>
-      <button class="menu-toggle">☰</button>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="sobre.html">Sobre Nosotros</a></li>
@@ -242,44 +282,32 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <section class="hero">
       <h2>¡Bienvenido a XCLUSIV3!</h2>
     </section>
-
     <section class="gallery">
-      <img src="fiesta1puerto.jpg" alt="Fiesta en Puerto - Edición especial XCLUSIV3">
-      <img src="fiesta3.jpg" alt="Ambiente de fiesta electrónica con luces LED">
-      <img src="puertoaguadulce.jpg" alt="Puerto de Aguadulce durante evento XCLUSIV3">
-      <img src="fiesta2.jpg" alt="Público disfrutando en el evento de XCLUSIV3">
-    </section>
-
-    <section id="blog">
-      <h2>Últimas noticias</h2>
-      <article>
-        <h3>Crónica: Xclusiv3 Vol. 4</h3>
-        <p>El warehouse rugía con los bajos. Más de 200 almas conectadas por el beat...</p>
-        <a href="#">Leer más</a>
-      </article>
+      <img src="fiesta1puerto.jpg" alt="Fiesta en el puerto 1" />
+      <img src="fiesta3.jpg" alt="Fiesta interior 2" />
+      <img src="puertoaguadulce.jpg" alt="Fiesta en Aguadulce" />
+      <img src="fiesta2.jpg" alt="Fiesta con DJ" />
     </section>
 
     <section class="social-links">
       <h3>Síguenos en Redes</h3>
       <div class="icons">
         <a href="https://instagram.com/xclusiv3.events" target="_blank">
-          <img src="ig.png" alt="Instagram de XCLUSIV3">
+          <img src="ig.png" alt="Instagram" />
         </a>
         <a href="https://chat.whatsapp.com/LH5F1oK2kdAIaJitwk5oP4" target="_blank">
-          <img src="whas.png" alt="WhatsApp de XCLUSIV3">
+          <img src="whas.png" alt="Whatsapp" />
         </a>
         <a href="https://tiktok.com/@tucuenta" target="_blank">
-          <img src="tiktok.png" alt="TikTok de XCLUSIV3">
+          <img src="tiktok.png" alt="TikTok" />
         </a>
       </div>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
     <p><a href="politicas.html">Políticas de Privacidad</a></p>
