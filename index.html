@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XCLUSIV3</title>
+
+  <!-- SEO Mejorado -->
+  <title>XCLUSIV3 | Eventos Electrónicos Exclusivos</title>
+  <meta name="description" content="XCLUSIV3 organiza eventos únicos de música electrónica. Vive una experiencia inolvidable con DJs, luces y energía sin igual." />
+  <meta name="keywords" content="XCLUSIV3, eventos, música electrónica, fiestas, DJs, warehouse, Puerto" />
+  <meta name="author" content="XCLUSIV3 Team" />
+
   <link rel="icon" type="image/png" href="xclusivelogo.png" />
+
+  <!-- Fuentes y estilos -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -176,25 +184,6 @@
     .social-links .icons a:hover img {
       transform: scale(1.2);
     }
-    .privacy {
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.85);
-      border-top: 2px solid #ffcc00;
-      margin-top: 30px;
-    }
-    .privacy h3 {
-      font-size: 28px;
-      color: #ffcc00;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .privacy p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.6;
-      text-align: justify;
-    }
     footer {
       text-align: center;
       padding: 25px;
@@ -206,67 +195,6 @@
       text-decoration: none;
       margin: 0 10px;
     }
-
-    /* 🌐 Adaptación para móviles */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        background: rgba(0,0,0,0.95);
-        right: 0;
-        top: 55px;
-        width: 220px;
-        text-align: center;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .nav-links.active {
-        display: flex;
-      }
-      header {
-        padding: 5px 10px;
-      }
-      .logo-container img {
-        height: 40px;
-      }
-      .logo-container h1 {
-        font-size: 20px;
-      }
-      .hero h2 {
-        font-size: 32px;
-        padding: 0 10px;
-      }
-      main {
-        padding: 80px 10px 30px;
-      }
-      .gallery {
-        flex-direction: column;
-        padding: 20px 10px;
-        gap: 15px;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-      }
-      .social-links h3 {
-        font-size: 20px;
-      }
-      .privacy h3 {
-        font-size: 22px;
-      }
-      .privacy p {
-        font-size: 15px;
-        padding: 0 10px;
-      }
-      footer {
-        font-size: 14px;
-        padding: 20px 10px;
-      }
-    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -276,7 +204,6 @@
         navLinks.classList.toggle("active");
       });
 
-      // Repetir video solo 6 veces
       const video = document.getElementById("bg-video");
       let playCount = 0;
       const maxPlays = 6;
@@ -301,7 +228,7 @@
 
   <header>
     <div class="logo-container">
-      <img src="logox1.jpg" alt="XCLUSIV3 Logo">
+      <img src="logox1.jpg" alt="Logo de XCLUSIV3 - Eventos de música electrónica">
       <h1>XCLUSIV3</h1>
     </div>
     <nav>
@@ -311,6 +238,7 @@
         <li><a href="sobre.html">Sobre Nosotros</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
       </ul>
     </nav>
   </header>
@@ -321,23 +249,32 @@
     </section>
 
     <section class="gallery">
-      <img src="fiesta1puerto.jpg" alt="Fiesta 1">
-      <img src="fiesta3.jpg" alt="Fiesta 2">
-      <img src="puertoaguadulce.jpg" alt="Fiesta 3">
-      <img src="fiesta2.jpg" alt="Fiesta 4">
+      <img src="fiesta1puerto.jpg" alt="Fiesta en Puerto - Edición especial XCLUSIV3">
+      <img src="fiesta3.jpg" alt="Ambiente de fiesta electrónica con luces LED">
+      <img src="puertoaguadulce.jpg" alt="Puerto de Aguadulce durante evento XCLUSIV3">
+      <img src="fiesta2.jpg" alt="Público disfrutando en el evento de XCLUSIV3">
+    </section>
+
+    <section id="blog">
+      <h2>Últimas noticias</h2>
+      <article>
+        <h3>Crónica: Xclusiv3 Vol. 4</h3>
+        <p>El warehouse rugía con los bajos. Más de 200 almas conectadas por el beat...</p>
+        <a href="#">Leer más</a>
+      </article>
     </section>
 
     <section class="social-links">
       <h3>Síguenos en Redes</h3>
       <div class="icons">
         <a href="https://instagram.com/xclusiv3.events" target="_blank">
-          <img src="ig.png" alt="Instagram">
+          <img src="ig.png" alt="Instagram de XCLUSIV3">
         </a>
         <a href="https://chat.whatsapp.com/LH5F1oK2kdAIaJitwk5oP4" target="_blank">
-          <img src="whas.png" alt="Whatsapp">
+          <img src="whas.png" alt="WhatsApp de XCLUSIV3">
         </a>
         <a href="https://tiktok.com/@tucuenta" target="_blank">
-          <img src="tiktok.png" alt="TikTok">
+          <img src="tiktok.png" alt="TikTok de XCLUSIV3">
         </a>
       </div>
     </section>
