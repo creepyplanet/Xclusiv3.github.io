@@ -65,8 +65,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.9);
+      padding: 5px 15px;
+      margin-top: 0;
+      background: rgba(0, 0, 0, 0.95);
       box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
       position: fixed;
       width: 100%;
@@ -78,11 +79,14 @@
       align-items: center;
     }
     .logo-container img {
-      height: 60px;
-      margin-right: 15px;
+      height: 50px;
+      margin-right: 10px;
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 5px;
+      padding: 4px;
       border-radius: 50%;
+    }
+    .logo-container h1 {
+      font-size: 24px;
     }
     nav {
       flex-grow: 1;
@@ -100,7 +104,7 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 30px;
+      gap: 25px;
     }
     .nav-links li a {
       text-decoration: none;
@@ -115,12 +119,12 @@
     }
     main {
       flex: 1;
-      padding: 150px 20px 60px;
+      padding: 90px 20px 60px;
       text-align: center;
     }
     .hero {
       text-align: center;
-      padding: 200px 20px 100px;
+      padding: 100px 20px 60px;
       background: url('party-bg.jpg') center/cover no-repeat;
     }
     .hero h2 {
@@ -167,7 +171,6 @@
     .social-links .icons a img {
       width: 40px;
       height: 40px;
-      /* Se remueve el filtro para mostrar el color original */
       transition: transform 0.3s ease;
     }
     .social-links .icons a:hover img {
@@ -203,6 +206,8 @@
       text-decoration: none;
       margin: 0 10px;
     }
+
+    /* 🌐 Adaptación para móviles */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -213,7 +218,7 @@
         position: absolute;
         background: rgba(0,0,0,0.95);
         right: 0;
-        top: 60px;
+        top: 55px;
         width: 220px;
         text-align: center;
         padding: 20px;
@@ -221,6 +226,45 @@
       }
       .nav-links.active {
         display: flex;
+      }
+      header {
+        padding: 5px 10px;
+      }
+      .logo-container img {
+        height: 40px;
+      }
+      .logo-container h1 {
+        font-size: 20px;
+      }
+      .hero h2 {
+        font-size: 32px;
+        padding: 0 10px;
+      }
+      main {
+        padding: 80px 10px 30px;
+      }
+      .gallery {
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 15px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+      }
+      .social-links h3 {
+        font-size: 20px;
+      }
+      .privacy h3 {
+        font-size: 22px;
+      }
+      .privacy p {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+      footer {
+        font-size: 14px;
+        padding: 20px 10px;
       }
     }
   </style>
@@ -231,7 +275,7 @@
       menuToggle.addEventListener("click", function() {
         navLinks.classList.toggle("active");
       });
-      
+
       // Repetir video solo 6 veces
       const video = document.getElementById("bg-video");
       let playCount = 0;
@@ -254,6 +298,7 @@
   <div class="preloader">
     <span>Loading...</span>
   </div>
+
   <header>
     <div class="logo-container">
       <img src="logox1.jpg" alt="XCLUSIV3 Logo">
@@ -269,37 +314,38 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section class="hero">
       <h2>¡Bienvenido a XCLUSIV3!</h2>
     </section>
+
     <section class="gallery">
       <img src="fiesta1puerto.jpg" alt="Fiesta 1">
       <img src="fiesta3.jpg" alt="Fiesta 2">
       <img src="puertoaguadulce.jpg" alt="Fiesta 3">
       <img src="fiesta2.jpg" alt="Fiesta 4">
     </section>
+
     <section class="social-links">
       <h3>Síguenos en Redes</h3>
       <div class="icons">
         <a href="https://instagram.com/xclusiv3.events" target="_blank">
           <img src="ig.png" alt="Instagram">
         </a>
-        <a href="https://chat.whatsapp.com/LH5F1oK2kdAIaJitwk5oP4?fbclid=PAZXh0bgNhZW0CMTEAAafYzFPSRIfPJ9bMg0DemzTQljO9WkWtL3Gip3TDQ-g8xfFWbijcWYw0aXklwQ_aem_VreclktXl_zRrPVdubQk8g" target="_blank">
+        <a href="https://chat.whatsapp.com/LH5F1oK2kdAIaJitwk5oP4" target="_blank">
           <img src="whas.png" alt="Whatsapp">
         </a>
         <a href="https://tiktok.com/@tucuenta" target="_blank">
           <img src="tiktok.png" alt="TikTok">
         </a>
-      </div>      
+      </div>
     </section>
-
   </main>
+
   <footer>
     <p>&copy; 2025 XCLUSIV3. Todos los derechos reservados.</p>
-    <p>
-      <a href="politicas.html">Políticas de Privacidad</a>
-    </p>
+    <p><a href="politicas.html">Políticas de Privacidad</a></p>
   </footer>
 </body>
 </html>
